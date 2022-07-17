@@ -6,5 +6,24 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+        resolve: "gatsby-source-strapi-api-v",
+        options: {
+            apiURL: "http://localhost:1337",
+            collectionTypes: [
+                "post",
+                "tag",
+            ],
+            queryLimit: 1000,
+            loginData: {
+                identifier: "",
+                password: "",
+            },
+        }
+    },
+    {
+        resolve: 'gatsby-plugin-sass'
+    }
+  ],
 }
