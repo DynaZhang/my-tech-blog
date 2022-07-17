@@ -10,7 +10,7 @@ module.exports = {
     {
         resolve: "gatsby-source-strapi-api-v",
         options: {
-            apiURL: "http://localhost:1337",
+            apiURL: process.env.NODE_ENV === 'development' ? 'http://localhost:1337' : 'http://101.43.210.74:1337',
             collectionTypes: [
                 "post",
                 "tag",
